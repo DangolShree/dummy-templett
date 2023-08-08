@@ -1,0 +1,116 @@
+* {
+  box-sizing: content-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "h1 h1 h1"
+    "header header header"
+    "banner banner off1"
+    "banner banner off2"
+    "sm main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+}
+
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+h1 {
+  background: blue;
+  color: white;
+  grid-area: h1;
+}
+
+header {
+  background: red;
+  grid-area: header;
+}
+
+.banner {
+  grid-area: banner;
+  min-height: 20vh;
+  background: linear-gradient(130deg, purple, orange);
+}
+
+.off1 {
+  grid-area: off1;
+  background: lightblue;
+}
+
+.off2 {
+  grid-area: off2;
+  background: pink;
+}
+
+.Side-menu {
+  grid-area: sm;
+  background: green;
+}
+
+.recent {
+  grid-area: recent;
+  background: darkcyan;
+}
+
+.tags {
+  grid-area: tags;
+  background: blue;
+}
+
+.main {
+  grid-area: main;
+  background: rgba(0, 0, 255, 0.477);
+}
+
+footer {
+  grid-area: footer;
+  background: black;
+  color: white;
+}
+@media (max-width: 1024px) {
+  .wrapper {
+    display: grid;
+    gap: 5px;
+
+    grid-template-areas:
+      "h1 h1"
+      "header header"
+      "banner banner"
+      "off1 off2 "
+      "sm tags"
+      "main main"
+      "recent recent"
+      "footer footer";
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    display: grid;
+    gap: 5px;
+
+    grid-template-areas:
+      "h1"
+      "header"
+      "banner "
+      "off1 off2 "
+      "sm"
+      "tags"
+      "main"
+      "main recent"
+      "footer";
+  }
+}
